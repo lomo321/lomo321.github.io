@@ -18,7 +18,7 @@ html, body {
 #container {
   position: relative;
   min-height: 100%;
-  background-color: #333333;
+  background-color: #eaeaea;
   padding-left: 300px; }
 
 #main {
@@ -31,6 +31,8 @@ html, body {
   height: 3000px; }
 
 .article-entry {
+  margin-bottom: 10px;
+  border: 1px solid #778899;
   background-color: #f5f5f5;
   line-height: 1.8em;
   padding-right: 20px;
@@ -425,7 +427,8 @@ pre .keyword .javascript .function {
 #topBar.fixed {
   display: block;
   position: fixed;
-  top: 0; }
+  top: 0;
+  border-bottom: 1px solid #222; }
 
 @media screen and (max-width: 800px) {
   #container {
