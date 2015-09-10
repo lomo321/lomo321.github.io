@@ -3,9 +3,9 @@
  */
 require.config({
     paths: {
-        "jquery": "js/com/jquery/jquery",
-        "velocity": "js/com/velocity/velocity",
-        "velocity-ui": "js/com/velocity/velocity.ui"
+        "jquery": "/js/com/jquery/jquery",
+        "velocity": "/js/com/velocity/velocity",
+        "velocity-ui": "/js/com/velocity/velocity.ui"
     },
     shim: {
         "velocity": {
