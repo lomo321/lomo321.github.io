@@ -23,9 +23,9 @@
                 var sequence = [
                     {e:$('.line-left'),p:{translateY:'-200%'},o:{durantion:500}},
                     {e:$('.line-right'),p:{translateY:'200%'},o:{durantion:500,sequenceQueue:false}},
-                    {e: $('.line-top'),p:{ translateX:'100%'}, o:{duration:500,}},
+                    {e: $('.line-top'),p:{ translateX:'100%'}, o:{duration:500}},
                     {e: $('.line-bottom'),p:{ translateX:'-100%'}, o:{duration:500, sequenceQueue:false}},
-                    {e: $('.logo'),p:{ top:'0',opacity:1}, o:{duration:200}},
+                    {e: $('.logo'),p:{ top:'0',opacity:1}, o:{duration:200}}
                 ];
                 sequence.push({e:$('.menu2'),p:{opacity:1},o:{duration:150}});
                 for(var i=0;i<4;i++) {
