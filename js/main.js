@@ -1,26 +1,24 @@
 /**
  * Created by liangxiaohao on 15/9/6.
  */
-require.config({
-    paths: {
-        "jquery": "/js/com/jquery/jquery",
-        "velocity": "/js/com/velocity/velocity",
-        "velocity-ui": "/js/com/velocity/velocity.ui"
-    },
-    shim: {
-        "velocity": {
-            deps: ["jquery"]
-        },
-        "velocity-ui": {
-            deps: ["velocity"]
-        }
-    }
+//require.config({
+//    paths: {
+//        //"jquery": "http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js",
+//        "velocity": "/js/com/velocity/velocity",
+//        "velocity-ui": "/js/com/velocity/velocity.ui"
+//    },
+//    shim: {
+//
+//        "velocity-ui": {
+//            deps: ["velocity"]
+//        }
+//    }
+//
+//});
 
-});
-
-require(["jquery"], function($) {
+//require([], function() {
     var motionON = function(){
-        require(["velocity","velocity-ui"],function(Velocity){
+        //require(["velocity","velocity-ui"],function(Velocity){
             function loadBrand(){
                 var sequence = [
                     {e:$('.line-left'),p:{translateY:'-200%'},o:{durantion:500}},
@@ -37,7 +35,7 @@ require(["jquery"], function($) {
             }
 
             loadBrand();
-        })
+        //})
     };
     motionON();
 
@@ -53,4 +51,4 @@ require(["jquery"], function($) {
     $("#title").on("click", function(){
         $('html, body').animate({scrollTop:0}, 'slow');
     });
-});
+//});
