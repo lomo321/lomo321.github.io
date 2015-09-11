@@ -259,8 +259,7 @@ html, body {
         background: none; }
   .article .code-block, .article .article-entry pre, .article .article-entry .highlight {
     background: #2d2d2d;
-    margin: 0 -20px;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-style: solid;
     border-color: #ddd;
     border-width: 1px 0;
