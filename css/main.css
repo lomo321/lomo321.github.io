@@ -109,12 +109,15 @@ html, body {
   background-color: #f5f5f5;
   font-family: "微软雅黑", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 20px;
-  box-shadow: 1px 1px 2px 0 #ccc; }
+  box-shadow: 1px 1px 2px 0 #ccc;
+  padding-top: 20px; }
   .article .article-title {
+    font-weight: bold;
     position: relative;
     margin: 0px 20px;
-    padding: 10px 0 5px 0; }
+    padding-bottom: 10px; }
     .article .article-title .date {
+      margin-top: 10px;
       color: #ccc; }
     .article .article-title .line {
       content: '';
@@ -201,13 +204,13 @@ html, body {
       font-weight: 300;
       color: #574C4C;
       padding-bottom: 5px;
-      border-bottom: 1px solid #ddd; }
+      border-bottom: 1px dotted #ddd; }
     .article .article-entry h3, .article .article-entry h4, .article .article-entry h5, .article .article-entry h6 {
       margin-top: 20px;
       font-weight: 300;
       color: #574C4C;
       padding-bottom: 5px;
-      border-bottom: 1px solid #ddd; }
+      border-bottom: 1px dotted #ddd; }
     .article .article-entry video {
       max-width: 100%; }
     .article .article-entry strong {
@@ -272,8 +275,8 @@ html, body {
   .article .article-entry pre, .article .article-entry code {
     font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace; }
   .article .article-entry code {
-    background: #eee;
-    text-shadow: 0 1px #fff;
+    background: #fff;
+    text-shadow: 0 1px #ccc;
     padding: 0 0.3em; }
   .article .article-entry pre code {
     background: none;
@@ -354,6 +357,44 @@ html, body {
     color: #6699cc; }
   .article pre .keyword .javascript .function {
     color: #cc99cc; }
+
+.list-title {
+  display: block;
+  background-color: #f5f5f5;
+  position: relative;
+  padding: 10px 20px 10px 20px;
+  margin-left: 20px;
+  border-left: 2px solid #ddd; }
+  .list-title:hover {
+    border-left: 2px solid #aaa; }
+  .list-title .title {
+    vertical-align: sub;
+    margin-left: 5px;
+    display: inline-block; }
+  .list-title .date {
+    display: inline-block;
+    color: #ccc; }
+
+@media screen and (max-width: 800px) {
+  .list-title {
+    padding: 20px 0px;
+    margin-left: 0px;
+    border-bottom: 1px solid #ddd;
+    border-left: none; }
+    .list-title .title {
+      position: absolute;
+      font-size: 16px; }
+    .list-title .date {
+      display: inline-block;
+      color: #ccc; } }
+
+.archive {
+  padding: 20px;
+  background-color: #f5f5f5; }
+  .archive .archive-year {
+    margin-bottom: 20px;
+    font-family: Cambria, Georgia, 'Microsoft Jhenghei', 'Hiragino Sans GB', 'Microsoft YaHei', 'Times New Roman', serif;
+    font-size: 20px; }
 
 #sideBar {
   position: fixed;
@@ -538,6 +579,8 @@ html, body {
   border-bottom: 1px solid #222; }
 
 @media screen and (max-width: 800px) {
+  body {
+    min-width: 320px; }
   #container {
     padding-left: 0; }
   #sideBar {
