@@ -267,6 +267,8 @@ html, body {
     padding: 0 10px; }
     .article .duoshuo div.ds-social-links {
       width: 100% !important; }
+    .article .duoshuo .ds-comments-tab-duoshuo {
+      background-color: white !important; }
   .article .code-block, .article .article-entry pre, .article .article-entry .highlight {
     background: #2d2d2d;
     padding: 10px 20px;
