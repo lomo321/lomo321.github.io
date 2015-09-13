@@ -260,6 +260,8 @@ html, body {
       margin: 0; }
       .article .article-entry figure table tbody tr:hover {
         background: none; }
+  .article .duoshuo {
+    margin: 0 20px; }
   .article .code-block, .article .article-entry pre, .article .article-entry .highlight {
     background: #2d2d2d;
     padding: 10px 20px;
