@@ -151,8 +151,6 @@ html, body {
       line-height: 10px; }
     .article .article-more .prev-next {
       float: left; }
-      .article .article-more .prev-next .ds-social-links {
-        width: 100%; }
   .article .article-entry {
     margin-bottom: 10px;
     background-color: #f5f5f5;
@@ -265,7 +263,10 @@ html, body {
       .article .article-entry figure table tbody tr:hover {
         background: none; }
   .article .duoshuo {
-    margin: 50px 20px 0 20px; }
+    margin-top: 50px;
+    padding: 0 10px; }
+    .article .duoshuo div.ds-social-links {
+      width: 100% !important; }
   .article .code-block, .article .article-entry pre, .article .article-entry .highlight {
     background: #2d2d2d;
     padding: 10px 20px;
@@ -581,6 +582,7 @@ html, body {
 #topBar.fixed {
   display: block;
   position: fixed;
+  z-index: 100;
   top: 0;
   border-bottom: 1px solid #222; }
 
