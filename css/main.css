@@ -149,6 +149,8 @@ html, body {
       display: inline-block;
       overflow: hidden;
       line-height: 10px; }
+    .article .article-more .prev-next {
+      float: left; }
   .article .article-entry {
     margin-bottom: 10px;
     background-color: #f5f5f5;
@@ -261,7 +263,7 @@ html, body {
       .article .article-entry figure table tbody tr:hover {
         background: none; }
   .article .duoshuo {
-    margin: 0 20px; }
+    margin: 50px 20px 0 20px; }
   .article .code-block, .article .article-entry pre, .article .article-entry .highlight {
     background: #2d2d2d;
     padding: 10px 20px;
