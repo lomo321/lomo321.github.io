@@ -352,21 +352,21 @@ html, body {
           font-weight: normal; }
           .article .article-entry .gist .gist-file .gist-meta a:hover {
             text-decoration: underline; }
-  .article pre .comment .title {
+  .article pre .comment, .article pre .title {
     color: #999999; }
-  .article pre .variable .attribute .tag .regexp .ruby .constant .xml .tag .title .xml .pi .xml .doctype .html .doctype .css .id .css .class .css .pseudo {
+  .article pre .variable, .article pre .attribute, .article pre .tag, .article pre .regexp, .article pre .ruby .constant, .article pre .xml .tag .title, .article pre .xml .pi, .article pre .xml .doctype, .article pre .html .doctype, .article pre .css .id, .article pre .css .class, .article pre .css .pseudo {
     color: #f2777a; }
-  .article pre .number .preprocessor .built_in .literal .params .constant {
+  .article pre .number, .article pre .preprocessor, .article pre .built_in, .article pre .literal, .article pre .params, .article pre .constant {
     color: #f99157; }
-  .article pre .class .ruby .class .title .css .rules .attribute {
+  .article pre .class, .article pre .ruby .class .title, .article pre .css .rules .attribute {
     color: #99cc99; }
-  .article pre .string .value .inheritance .header .ruby .symbol .xml .cdata {
+  .article pre .string, .article pre .value, .article pre .inheritance, .article pre .header, .article pre .ruby .symbol, .article pre .xml .cdata {
     color: #99cc99; }
   .article pre .css .hexcolor {
     color: #66cccc; }
-  .article pre .function .python .decorator .python .title .ruby .function .title .ruby .title .keyword .perl .sub .javascript .title .coffeescript .title {
+  .article pre .function, .article pre .python .decorator, .article pre .python .title, .article pre .ruby .function .title, .article pre .ruby .title .keyword, .article pre .perl .sub, .article pre .javascript .title, .article pre .coffeescript .title {
     color: #6699cc; }
-  .article pre .keyword .javascript .function {
+  .article pre .keyword, .article pre .javascript .function {
     color: #cc99cc; }
 
 .list-title {
