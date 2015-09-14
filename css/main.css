@@ -41,7 +41,7 @@ html, body {
 #container {
   position: relative;
   min-height: 100%;
-  background-color: #eaeaea;
+  background-color: #eef1f1;
   padding-left: 300px; }
 
 #main {
@@ -50,7 +50,7 @@ html, body {
 #content {
   box-sizing: border-box;
   width: 100%;
-  padding: 10px; }
+  padding: 30px; }
 
 .bounce, .article {
   -webkit-animation: cd-bounce-1 0.6s;
@@ -106,7 +106,7 @@ html, body {
     transform: scale(1); } }
 
 .article {
-  background-color: #f5f5f5;
+  background-color: #fbfbfb;
   font-family: "微软雅黑", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 20px;
   box-shadow: 1px 1px 2px 0 #ccc;
@@ -114,9 +114,11 @@ html, body {
   .article .article-title {
     font-weight: bold;
     position: relative;
-    margin: 0px 20px;
-    padding-bottom: 10px; }
+    margin: 0px 40px;
+    padding-bottom: 10px;
+    color: #222; }
     .article .article-title .date {
+      font-weight: normal;
       margin-top: 10px;
       color: #ccc; }
     .article .article-title .line {
@@ -130,8 +132,10 @@ html, body {
     position: relative;
     height: 20px;
     padding: 10px 0;
-    margin: 0 20px;
+    margin: 0 40px;
     text-align: right; }
+    .article .article-more a.link:hover {
+      color: #5babe6; }
     .article .article-more .line {
       content: '';
       display: block;
@@ -142,9 +146,8 @@ html, body {
     .article .article-more a.link {
       padding: 1px 8px;
       border-radius: 1px;
-      background-color: #222;
-      color: #f2f2f2;
-      font-size: 5px;
+      color: #217fbc;
+      font-size: 12px;
       position: relative;
       display: inline-block;
       overflow: hidden;
@@ -153,20 +156,22 @@ html, body {
       float: left; }
   .article .article-entry {
     margin-bottom: 10px;
-    background-color: #f5f5f5;
     line-height: 1.8em;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
     padding-bottom: 20px;
     color: #676767; }
     .article .article-entry a {
-      color: #0099cc; }
+      color: #217fbc; }
+    .article .article-entry a:hover {
+      color: #5babe6; }
     .article .article-entry p {
       margin-top: 10px; }
     .article .article-entry p code, .article .article-entry li code {
+      color: #222;
       padding: 1px 3px;
       margin: 0 3px;
-      background: #ddd;
+      background: #dbf1f1;
       border: 1px solid #ccc;
       font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
       word-wrap: break-word;
@@ -266,7 +271,7 @@ html, body {
         background: none; }
   .article .duoshuo {
     margin-top: 50px;
-    padding: 0 10px; }
+    padding: 0 20px; }
     .article .duoshuo div.ds-social-links {
       width: 100% !important; }
     .article .duoshuo .ds-comments-tab-duoshuo {
@@ -352,7 +357,7 @@ html, body {
           font-weight: normal; }
           .article .article-entry .gist .gist-file .gist-meta a:hover {
             text-decoration: underline; }
-  .article pre .comment, .article pre .title {
+  .article pre .comment .title {
     color: #999999; }
   .article pre .variable, .article pre .attribute, .article pre .tag, .article pre .regexp, .article pre .ruby .constant, .article pre .xml .tag .title, .article pre .xml .pi, .article pre .xml .doctype, .article pre .html .doctype, .article pre .css .id, .article pre .css .class, .article pre .css .pseudo {
     color: #f2777a; }
@@ -416,8 +421,9 @@ html, body {
   font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   box-sizing: border-box;
   padding: 100px 0;
-  background-color: #f5f5f5;
-  text-align: center; }
+  background-color: #fafafa;
+  text-align: center;
+  box-shadow: 0px 1px 2px 0 #ccc; }
   #sideBar h1 {
     font-size: 22px;
     font-weight: bold;
@@ -465,8 +471,9 @@ html, body {
     margin: auto;
     /*float: left;*/
     overflow: hidden; }
+  #sideBar .menu {
+    opacity: 0; }
   #sideBar .menu-item {
-    opacity: 0;
     margin: 20px 0;
     font-size: 16px;
     font-weight: normal; }
@@ -490,13 +497,46 @@ html, body {
   #sideBar .menu-link:hover::before {
     visibility: visible;
     transform: scaleX(1); }
+  #sideBar .myLinks a {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 20px; }
+  #sideBar .myLinks .github {
+    background: url("/img/github.png") center no-repeat #666; }
+  #sideBar .myLinks .weibo {
+    background: url("/img/weibo.png") center no-repeat #666; }
+  #sideBar #aboutMe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: #f5f5f5;
+    transition-timing-function: ease-out; }
+  #sideBar #cancel {
+    color: #ccc;
+    line-height: 100px;
+    border: 1px solid #dddddd;
+    border-right: none;
+    box-shadow: 0px 1px 2px 0 #ccc;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -50%;
+    width: 30px;
+    height: 100px;
+    background-color: #fafafa; }
+  #sideBar #cancel:hover {
+    background-color: #ffffff; }
 
 #mobile-nav {
   box-sizing: border-box;
   padding-top: 40px;
   width: 100%;
   height: 180px;
-  background-color: #f5f5f5;
+  background-color: #fafafa;
   display: none;
   font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
   #mobile-nav a:hover, #mobile-nav a:visited, #mobile-nav a:link, #mobile-nav a:active {
@@ -595,6 +635,8 @@ html, body {
     min-width: 320px; }
   #container {
     padding-left: 0; }
+  #content {
+    padding: 10px; }
   #sideBar {
     display: none; }
   #mobile-nav {

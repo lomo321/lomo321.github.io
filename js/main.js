@@ -28,9 +28,10 @@
                     {e: $('.logo'),p:{ top:'0',opacity:1}, o:{duration:200}}
                 ];
                 sequence.push({e:$('.menu2'),p:{opacity:1},o:{duration:150}});
-                for(var i=0;i<4;i++) {
-                    sequence.push( {e: $('.menu-item')[i],p:{opacity:1},o:{duration:150}} );
-                }
+                //for(var i=0;i<4;i++) {
+                //    sequence.push( {e: $('.menu-item')[i],p:{opacity:1},o:{duration:150}} );
+                //}
+                sequence.push({e:$('.menu'),p:{opacity:1},o:{duration:150, sequenceQueue:false}});
                 $.Velocity.RunSequence(sequence);
             }
 
@@ -38,7 +39,32 @@
         //})
     };
     motionON();
-
+    var aboutMeMotion = function() {
+        function loadInfo(){
+            var sequence = [
+                {e:$('#aboutMe'),p:{translateX:'100%'},o:{duration:150}}
+            ];
+            $.Velocity.RunSequence(sequence);
+        }
+        loadInfo();
+    };
+    var cancelMotion = function() {
+        function cancelInfo(){
+            var sequence = [
+                {e:$('#aboutMe'),p:{translateX:'-100%'},o:{duration:150}}
+            ];
+            $.Velocity.RunSequence(sequence);
+        }
+        cancelInfo();
+    }
+    var $aboutMe = $('#aboutMeButton');
+    var $cancel = $('#cancel');
+    $cancel.on('click',function(){
+       cancelMotion();
+    });
+    $aboutMe.on('click',function(){
+        aboutMeMotion()
+    });
     var $topBar = $("#topBar");
     window.onscroll = function() {
         var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
