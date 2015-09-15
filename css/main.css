@@ -49,7 +49,7 @@ html, body {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("/img/bg.jpg") center no-repeat #666;
+  background: url("/img/bg.jpg") center no-repeat #f2f2f2;
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover; }
@@ -446,10 +446,10 @@ html, body {
   font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   box-sizing: border-box;
   padding: 100px 0;
-  background-color: #cccccc;
+  background-color: #eeeeee;
   text-align: center;
   box-shadow: 0px 1px 2px 0 #ccc;
-  opacity: 0.9; }
+  opacity: 0.8; }
   #sideBar h1 {
     font-size: 22px;
     font-weight: bold;

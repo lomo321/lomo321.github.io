@@ -66,15 +66,15 @@
         aboutMeMotion()
     });
     var $topBar = $("#topBar");
-    window.onscroll = function() {
-        var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
-        if(scrollTop >= 130) {
-            $topBar.addClass("fixed");
-        } else {
-            $topBar.removeClass("fixed");
-        }
-    };
-    $("#title").on("click", function(){
-        $('html, body').animate({scrollTop:0}, 'slow');
-    });
+    //window.onscroll = function() {
+    //    var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+    //    if(scrollTop >= 130) {
+    //        $topBar.addClass("fixed");
+    //    } else {
+    //        $topBar.removeClass("fixed");
+    //    }
+    //};
+    //$("#title").on("click", function(){
+    //    $('html, body').animate({scrollTop:0}, 'slow');
+    //});
 //});
