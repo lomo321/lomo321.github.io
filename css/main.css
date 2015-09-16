@@ -58,12 +58,12 @@ html, body {
   width: 100%; }
 
 #content {
-  width: 760px;
+  width: 80%;
   box-sizing: border-box;
   padding: 30px;
   margin: auto; }
 
-.bounce, .article {
+.bounce, .article, .archive {
   -webkit-animation: cd-bounce-1 0.6s;
   -moz-animation: cd-bounce-1 0.6s;
   animation: cd-bounce-1 0.6s; }
@@ -161,7 +161,7 @@ html, body {
       top: 0;
       width: 100%; }
     .article .article-more a.link {
-      padding: 1px 8px;
+      padding: 1px;
       border-radius: 1px;
       color: #217fbc;
       font-size: 16px;
@@ -431,6 +431,59 @@ html, body {
     .list-title .date {
       display: inline-block;
       color: #ccc; } }
+
+.bounce, .article, .archive {
+  -webkit-animation: cd-bounce-1 0.6s;
+  -moz-animation: cd-bounce-1 0.6s;
+  animation: cd-bounce-1 0.6s; }
+
+@-webkit-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.01); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(1); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: scale(1.01); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); } }
 
 .archive {
   padding: 20px;
