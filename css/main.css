@@ -63,6 +63,36 @@ html, body {
   padding: 30px;
   margin: auto; }
 
+#pagination ul {
+  text-align: center; }
+  #pagination ul li {
+    margin: 5px;
+    display: inline-block; }
+    #pagination ul li a {
+      border: 2px solid #f2f2f2;
+      font-family: Cambria, Georgia, 'Microsoft Jhenghei', 'Hiragino Sans GB', 'Microsoft YaHei', 'Times New Roman', serif;
+      display: block;
+      background-color: #f2f2f2;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      color: #217fbc;
+      font-size: 15px;
+      border-radius: 50%;
+      text-align: center;
+      transition: all 0.1s ease-in; }
+    #pagination ul li a:hover {
+      background-color: #217fbc;
+      color: #f2f2f2; }
+    #pagination ul li a.disabled {
+      background-color: #f2f2f2;
+      color: #217fbc; }
+    #pagination ul li a.disabled:hover {
+      background-color: #f2f2f2; }
+    #pagination ul li a.current {
+      color: #f2f2f2;
+      background-color: #217fbc; }
+
 .bounce, .article, .archive {
   -webkit-animation: cd-bounce-1 0.6s;
   -moz-animation: cd-bounce-1 0.6s;
