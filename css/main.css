@@ -222,7 +222,7 @@ html, body {
       margin-top: 12px; }
     .article .article-entry ul, .article .article-entry ol {
       font-size: 14px;
-      margin: 10px 0px; }
+      margin: 10px 30px; }
     .article .article-entry li ul, .article .article-entry li ol {
       margin-left: 30px; }
       .article .article-entry li ul li:before, .article .article-entry li ol li:before {
