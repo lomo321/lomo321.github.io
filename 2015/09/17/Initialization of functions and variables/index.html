@@ -101,7 +101,7 @@
 <a id="more"></a>
 <h2 id="顶层变量实例化">顶层变量实例化</h2><p>在代码将要被执行前，会有一个预处理阶段，称之为<code>变量实例化</code>。</p>
 <ol>
-<li><p>首先，编译器会读取代码中以<code>function name{...}</code>这样的形式的函数声明。每一次声明，都会创建一个函数，并放到<code>window</code>对象里。</p>
+<li><p>首先，编译器会读取代码中以<code>function name{...}</code>这种形式的函数声明。每一次声明，都会创建一个函数放到<code>window</code>对象里。</p>
 <p> 以下的代码作为例子。</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'f:'</span>+arg)</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">var</span> g = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'g:'</span>+arg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> 在这个阶段，浏览器找到<code>function f</code>，并创建它将它保存为<code>window.f</code>:</p>
