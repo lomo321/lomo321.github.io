@@ -164,7 +164,7 @@ html, body {
     .article .article-title .date {
       font-weight: normal;
       margin-top: 10px;
-      color: #ccc; }
+      color: #217fbc; }
     .article .article-title .line {
       content: '';
       display: block;
@@ -233,8 +233,8 @@ html, body {
       border-left: 5px solid #ccc;
       padding: 15px 20px;
       margin-top: 10px;
-      border-left: 5px solid #657b83;
-      background: #f6f6f6; }
+      border-left: 5px solid #217fbc;
+      background: #f4f4f4; }
       .article .article-entry blockquote p {
         margin-top: 0; }
     .article .article-entry em {
@@ -251,7 +251,8 @@ html, body {
       float: left;
       margin-top: 12px; }
     .article .article-entry ul, .article .article-entry ol {
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 200;
       margin: 10px 30px; }
     .article .article-entry li ul, .article .article-entry li ol {
       margin-left: 30px; }
@@ -259,14 +260,16 @@ html, body {
         content: "";
         background: #dedede; }
     .article .article-entry h1 {
-      margin-top: 30px;
-      font-weight: bold; }
+      margin-top: 80px;
+      font-weight: bold;
+      color: #217fbc;
+      padding-bottom: 5px; }
     .article .article-entry h2 {
-      margin-top: 20px;
+      margin-top: 80px;
       font-weight: 300;
-      color: #574C4C;
+      color: #217fbc;
       padding-bottom: 5px;
-      border-bottom: 1px dotted #ddd; }
+      border-bottom: 2px dotted #217fbc; }
     .article .article-entry h3, .article .article-entry h4, .article .article-entry h5, .article .article-entry h6 {
       margin-top: 20px;
       font-weight: 300;
@@ -287,8 +290,7 @@ html, body {
       margin-bottom: 20px;
       border-left: 0;
       border-right: 0;
-      border-top: 1px solid #DDD;
-      border-bottom: 1px solid #FFF; }
+      border-bottom: 1px dotted #217fbc; }
     .article .article-entry pre {
       font-size: 1/0.9em;
       line-height: 1.5;
