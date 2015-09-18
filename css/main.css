@@ -218,7 +218,7 @@ html, body {
     .article .article-entry p {
       margin-top: 10px; }
     .article .article-entry p code, .article .article-entry li code {
-      color: #915406;
+      color: #172941;
       padding: 1px 3px;
       margin: 0 3px;
       background: #dbf1f1;
@@ -262,10 +262,10 @@ html, body {
       padding-bottom: 5px; }
     .article .article-entry h2 {
       margin-top: 60px;
-      font-weight: 300;
-      color: #0a6391;
+      font-weight: 500;
+      color: #172941;
       padding-bottom: 5px;
-      border-bottom: 2px dotted #0a6391; }
+      border-bottom: 2px dotted #7898a7; }
     .article .article-entry h3, .article .article-entry h4, .article .article-entry h5, .article .article-entry h6 {
       margin-top: 20px;
       font-weight: 300;
