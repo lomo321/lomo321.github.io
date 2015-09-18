@@ -41,7 +41,8 @@ html, body {
 #container {
   position: relative;
   min-height: 100%;
-  padding-left: 50px; }
+  padding-left: 50px;
+  background-color: #172941; }
 
 #background {
   position: fixed;
