@@ -211,11 +211,27 @@ html, body {
       position: relative;
       display: inline-block;
       overflow: hidden;
-      line-height: 10px; }
+      line-height: 20px; }
     .article .article-more .prev {
-      float: left; }
+      text-align: left;
+      float: left;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; }
+      @media screen and (max-width: 800px) {
+        .article .article-more .prev {
+          width: 100px; } }
     .article .article-more .next {
       float: right; }
+      .article .article-more .next .dot {
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: text-top; }
+      @media screen and (max-width: 800px) {
+        .article .article-more .next .dot {
+          width: 70px; } }
   .article .article-entry {
     margin-bottom: 10px;
     line-height: 1.8em;
