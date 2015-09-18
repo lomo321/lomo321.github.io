@@ -169,6 +169,21 @@ html, body {
       position: absolute;
       bottom: 0;
       width: 100%; }
+    .article .article-title .article-tag-list {
+      display: inline-block;
+      float: right;
+      list-style: none;
+      margin-top: 5px; }
+      .article .article-title .article-tag-list .article-tag-list-item {
+        background-color: #915406;
+        padding: 0 4px 0 0;
+        border-right: 4px solid #452e11; }
+      .article .article-title .article-tag-list .article-tag-list-item a {
+        min-width: 25px;
+        padding: 1px 10px;
+        font-size: 12px;
+        display: block;
+        background-color: #d9c9b8; }
   .article .article-more {
     position: relative;
     height: 20px;
