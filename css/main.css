@@ -56,6 +56,7 @@ html, body {
   width: 100%; }
 
 #content {
+  height: 100%;
   width: 80%;
   box-sizing: border-box;
   padding: 30px;
@@ -682,7 +683,9 @@ html, body {
   height: 180px;
   background-color: #ededed;
   display: none;
-  font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+  font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  border-bottom: 5px solid #452e11;
+  position: relative; }
   #mobile-nav a:hover, #mobile-nav a:visited, #mobile-nav a:link, #mobile-nav a:active {
     color: #222;
     text-decoration: none; }
@@ -749,6 +752,11 @@ html, body {
         color: #222; }
       #mobile-nav .menu2 .menu-item2 a:active {
         background-color: #b3b689; }
+  #mobile-nav .bt-line {
+    position: absolute;
+    bottom: 0;
+    border-bottom: 5px solid #915406;
+    width: 100%; }
 
 #topBar {
   width: 100%;
@@ -780,7 +788,7 @@ html, body {
   #container {
     padding-left: 0; }
   #content {
-    padding: 10px;
+    padding: 0 5px;
     width: 100%; }
   #sideBar {
     display: none; }
