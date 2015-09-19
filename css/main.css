@@ -565,9 +565,9 @@ html, body {
 
 #sideBar {
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
-  height: 280px;
+  height: 290px;
   width: 50px;
   font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   box-sizing: border-box;
@@ -621,8 +621,9 @@ html, body {
     /*float: left;*/
     overflow: hidden; }
   #sideBar .menu {
-    background-color: #d9c9b8;
-    padding: 20px 0; }
+    background-color: #eeeeee;
+    padding: 20px 0;
+    border-bottom: 10px solid #d9c9b8; }
   #sideBar .menu-item {
     opacity: 0;
     margin: 20px 0;
@@ -688,7 +689,7 @@ html, body {
     position: absolute;
     top: 0;
     width: 50px;
-    height: 270px;
+    height: 280px;
     background: #915406;
     z-index: -1; }
 

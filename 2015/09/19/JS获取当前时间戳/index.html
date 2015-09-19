@@ -76,61 +76,64 @@
     <div class="bt-line"></div>
 </nav>
         <div id="content">
-<div class="archive">
+
 
     
-    
-    
-
+<article class="article">
+    <header class="article-title" id="article-title-JS获取当前时间戳">
         
-            
-    <h2 class="cal" ><i class="demo-icon icon-calendar"></i></h2>
-    <a class="line2"></a>
-
-    <h2 class="archive-year" >2015</h2>
+        <h1>JS获取当前时间戳</h1>
         
-        
-    <a href="/2015/09/19/JS获取当前时间戳/" class="list-title">
-        <h5 class="date">09/19</h5>
-        <h1 class="title">JS获取当前时间戳</h1>
-    </a>
+        <h5 class="date"><i class="demo-icon icon-calendar"></i>2015/09/19</h5>
 
+        <div class="line"></div>
+    </header>
     
-    
-    
-
-        
-        
-    <a href="/2015/09/16/Initialization of functions and variables/" class="list-title">
-        <h5 class="date">09/16</h5>
-        <h1 class="title">函数与变量的初始化</h1>
-    </a>
-
-    
-    
-    
-
+    <div class="article-entry"><p>JS获取当前时间戳</p>
+<h2 id="第一种方法">第一种方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp = <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">结果：<span class="number">1280977330000</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="第二种方法">第二种方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp = (<span class="keyword">new</span> <span class="built_in">Date</span>()).valueOf();</span><br><span class="line">结果：<span class="number">1280977330748</span></span><br></pre></td></tr></table></figure>
+<h2 id="第三种方法">第三种方法</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> timestamp=new <span class="function"><span class="title">Date</span><span class="params">()</span></span>.<span class="function"><span class="title">getTime</span><span class="params">()</span></span>；</span><br><span class="line">结果：<span class="number">1280977330748</span></span><br></pre></td></tr></table></figure>
+<p>第一种：获取的时间戳是把毫秒改成000显示，</p>
+<p>第二种和第三种是获取了当前毫秒的时间戳。</p>
+</div>
+    <div class="article-more">
+        <div class="line"></div>
         
         
-    <a href="/2015/09/13/7 Essential JavaScript Functions/" class="list-title">
-        <h5 class="date">09/13</h5>
-        <h1 class="title">7 Essential JavaScript Functions</h1>
-    </a>
-
-    
-    
-    
-
+        <a class="prev link" href="/2015/09/16/Initialization of functions and variables/"><i class="icon-left-open"></i>函数与变量的初始化</a>
         
-        
-    <a href="/2015/09/10/hello-world/" class="list-title">
-        <h5 class="date">09/10</h5>
-        <h1 class="title">Hello World</h1>
-    </a>
+    </div>
+    
 
     
-    <a class="line2"></a>
-<div>
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="article-title-JS获取当前时间戳" data-title="JS获取当前时间戳"
+             data-url="http://lomo321.github.io/2015/09/19/JS获取当前时间戳/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name: "lomo321"};
+            (function () {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
+    
+
+</article>
+
+
+
+
 </div>
     </div>
 </div>
