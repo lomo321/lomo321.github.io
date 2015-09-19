@@ -42,7 +42,8 @@ html, body {
   position: relative;
   min-height: 100%;
   padding-left: 50px;
-  background-color: #172941; }
+  background-color: #172941;
+  overflow: auto; }
 
 #background {
   position: fixed;
@@ -53,7 +54,8 @@ html, body {
   background-color: #172941; }
 
 #main {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 200px; }
 
 #content {
   height: 100%;
@@ -185,6 +187,8 @@ html, body {
         font-size: 12px;
         display: block;
         background-color: #d9c9b8; }
+      .article .article-title .article-tag-list a:hover {
+        background-color: #dddddd; }
   .article .article-more {
     position: relative;
     height: 20px;
@@ -565,14 +569,15 @@ html, body {
 
 #sideBar {
   position: fixed;
-  top: 30px;
+  top: -100%;
   left: 0;
   height: 290px;
   width: 50px;
   font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   box-sizing: border-box;
   background-color: #452e11;
-  text-align: center; }
+  text-align: center;
+  transition-timing-function: ease-in; }
   #sideBar h1 {
     font-size: 22px;
     font-weight: bold;
@@ -798,6 +803,45 @@ html, body {
   z-index: 100;
   top: 0;
   border-bottom: 1px solid #222; }
+
+#footer {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #172941;
+  color: #d9c9b8; }
+  #footer .footer-content {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    text-align: center; }
+    #footer .footer-content .friend-link a {
+      margin-left: 20px;
+      display: inline-block;
+      color: #d9c9b8; }
+    #footer .footer-content .friend-link a:hover {
+      color: #eeeeee; }
+    #footer .footer-content .visit-me {
+      margin-top: 20px;
+      color: #eeeeee; }
+      #footer .footer-content .visit-me a {
+        font-size: 15px;
+        margin-left: 10px;
+        display: inline-block;
+        color: #eeeeee; }
+      #footer .footer-content .visit-me a:hover {
+        color: #d9c9b8; }
+    #footer .footer-content .lomo {
+      color: #d9c9b8;
+      margin-top: 20px; }
+      #footer .footer-content .lomo .a {
+        color: #452e11; }
+      #footer .footer-content .lomo .b {
+        color: #915406; }
+      #footer .footer-content .lomo .c {
+        color: #d9c9b8; }
 
 @media screen and (max-width: 800px) {
   body {

@@ -37,7 +37,11 @@ var motionON = function () {
     }
 
     function loadBrand2() {
-        var sequence =[];
+        var sequence =[
+            {e:$('#sideBar'),p:{top:50},o:{duration:200}},
+            {e:$('#sideBar'),p:{top:30},o:{duration:300}}
+
+        ];
         for(var i=0;i<4;i++) {
             sequence.push( {e: $('.menu-item')[i],p:{opacity:1},o:{duration:200}} );
         }
