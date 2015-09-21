@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>lomo's blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/img/favicon.ico"  type="image/x-icon">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a33121bb6751d4a4716c741475e1f9e5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/css/fontello.css" type="text/css">
+</head>
+<body>
+
+<div id="container">
+    <div id="sideBar">
+    <!--<h1>-->
+        <!--<span class="line-left"></span>-->
+        <!--<div class="brand">-->
+            <!--<span class="line-top"></span>-->
+            <!--<a class="logo" href="/">Lomo's Blog</a>-->
+            <!--<span class="line-bottom"></span>-->
+        <!--</div>-->
+        <!--<span class="line-right"></span>-->
+    <!--</h1>-->
+    <!--<ul class="menu">-->
+        <!--<li class="menu-item"><a href="/" class="menu-link"><i class=" icon-weibo "></i>Home</a></li>-->
+        <!--<li class="menu-item"><a href="/archives/" class="menu-link">Archive</a></li>-->
+        <!--<li class="menu-item"><a class="menu-link" style="text-decoration:line-through;">Photo</a></li>-->
+        <!--<li class="menu-item"><a class="menu-link" id="aboutMeButton">About Me</a></li>-->
+    <!--</ul>-->
+    <!--&lt;!&ndash;<div class="myLinks">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="github"></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="weibo"></a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div id="aboutMe">-->
+        <!--<div id="cancel">||</div>-->
+    <!--</div>-->
+    <ul class="menu">
+        <li class="menu-item"><a href="/" class="menu-link"><i class="demo-icon icon-home"></i></a></li>
+        <li class="menu-item"><a href="/archives/" class="menu-link"><i class="demo-icon icon-archive"></i></a></li>
+        <li class="menu-item"><a class="menu-link" style="text-decoration:line-through;"><i class="demo-icon icon-picture"></i></a></li>
+        <li class="menu-item"><a class="menu-link" id="aboutMeButton"><i class="demo-icon icon-info"></i></a></li>
+    </ul>
+    <div class="background"></div>
+</div>
+    <div id="main">
+        <nav id="mobile-nav">
+        <h1>
+            <span class="line-left"></span>
+            <div class="brand">
+                <span class="line-top"></span>
+                <a class="logo" href="/">Lomo's Blog</a>
+                <span class="line-bottom"></span>
+            </div>
+            <span class="line-right"></span>
+        </h1>
+        <ul class="menu2">
+            <li class="menu-item2"><a href="/" class="menu-link">Home</a></li>
+            <li class="menu-item2"><a href="/archives/" class="menu-link">Archive</a></li>
+            <li class="menu-item2"><a class="menu-link" style="text-decoration:line-through;">Photo</a></li>
+            <li class="menu-item2"><a class="menu-link" style="text-decoration:line-through;">About Me</a></li>
+        </ul>
+        <div id="topBar">
+            <!--<div class="toolBar"></div>-->
+            <h1 id="title"> Lomo's Blog</h1>
+        </div>
+    <div class="bt-line"></div>
+</nav>
+        <div id="content">
+
+
+    
+<article class="article">
+    <header class="article-title" id="article-title-JS模式：对象">
+        
+        <h1>JS模式：对象</h1>
+        
+        <h5 class="date"><i class="demo-icon icon-calendar"></i>2015/09/20</h5>
+
+        <div class="line"></div>
+    </header>
+    
+    <div class="article-entry"><p>最近在看JS设计模式，顺便回顾一下基础知识，做一下归纳总结。</p>
+<p><a href="#理解对象">1 理解对象</a></p>
+<ul>
+<li><a href="#数据属性">1.1数据属性</a></li>
+<li><a href="#访问器属性">1.2访问器属性</a></li>
+<li><a href="#定义属性">1.3定义属性</a></li>
+<li><a href="#读取属性">1.4读取属性</a></li>
+</ul>
+<p><a href="#创建对象">2 创建对象</a></p>
+<ul>
+<li><a href="#构造函数模式">2.1构造函数模式</a></li>
+<li><a href="#原型模式">2.2原型模式</a></li>
+<li><a href="#其他对象创建模式">2.3其他对象创建模式</a></li>
+</ul>
+<p><a href="#更高级的玩法">3 更高级的玩法</a></p>
+<a id="more"></a>
+<h2 id="理解对象">理解对象</h2><p>理解对象，并不是教你怎样体谅你的男/女朋友。看完这篇文章你对JS的对象的理解会更深入，然而你自己的对象依旧会责怪你不体谅，解决这个问题最直接的办法，就是反问一句<code>为什么你也不体谅一下我？</code></p>
+<p>ECMA-262把对象定义为<code>无序属性的集合，其属性可以包含基本值、对象或函数</code>。我们可以将对象想象成散列表：名值对，值可以是数据或函数。</p>
+<p>JS的对象有2种属性：<code>数据属性</code>和<code>访问器属性</code>。</p>
+<h3 id="数据属性">数据属性</h3><p>数据属性有4个特征：</p>
+<ul>
+<li>[[Configurable]]：能否delete，能否修改属性的特征，能否将数据属性改为访问器属性。默认为true</li>
+<li>[[Enumerable]]：能否通过for-in循环，默认为true。</li>
+<li>[[Writable]]：可否修改属性的值，默认为true。</li>
+<li>[[Value]]：包含了数据属性的数据值，从这里读写。默认为undefined。</li>
+</ul>
+<h3 id="访问器属性">访问器属性</h3><p>访问器属性不包含数据值，包含了一对<code>get</code>,<code>set</code>函数。</p>
+<p>访问器属性同样有4个特征：</p>
+<ul>
+<li>[[Configurable]]：同上。</li>
+<li>[[Enumerable]]：同上。</li>
+<li>[[Get]]：读取属性时调用的函数。默认为undefined。</li>
+<li>[[Set]]：写入属性时调用的函数。默认为undefined。</li>
+</ul>
+<h3 id="定义属性">定义属性</h3><p>以上两种属性，都可以使用<code>Object.defineProperty()</code>这个方法定义。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person, <span class="string">"name"</span>, &#123;</span><br><span class="line">	writable: <span class="literal">false</span>,</span><br><span class="line">	value: <span class="string">"Lomo"</span></span><br><span class="line">&#125;)</span><br><span class="line">person.name;<span class="comment">//"Lomo"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"weight"</span>, &#123;</span><br><span class="line">	get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"120kg"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	set: <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(newValue &lt; <span class="number">110</span>) &#123;</span><br><span class="line">			<span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">person.weight <span class="comment">//"120kg"</span></span><br><span class="line">person.age <span class="comment">//"undefined"</span></span><br><span class="line">person.weight = <span class="number">105</span>;</span><br><span class="line">person.weight <span class="comment">//"120kg"</span></span><br><span class="line">person.age <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
+<p>我们也可以使用<code>Object.defineProperties</code>定义多个属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperties(objectName, &#123;</span><br><span class="line">	propertyName:&#123;</span><br><span class="line">		attribute: xxx,</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="读取属性">读取属性</h3><p>可以使用<code>Object.getOwnPropertyDescriptor(objectName, &quot;propertyName&quot;)</code>方法获取属性的特征。该方法返回一个对象。</p>
+<h2 id="创建对象">创建对象</h2><h3 id="构造函数模式">构造函数模式</h3><p>使用对象字面量，可以用于创建单个对象。假如要创建多个具有相同属性的对象实例，可以使用构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Lomo"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"mo"</span>);</span><br></pre></td></tr></table></figure>
+<p>要创建<code>Person</code>实例，必须使用new操作符。构造函数被调用时实际上经历了以下4个步骤：</p>
+<ol>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象（this也指向了这个对象）</li>
+<li>执行构造函数中的代码</li>
+<li>返回新对象</li>
+</ol>
+<p>使用<code>new</code>操作符创建对象时，构造函数总是返回一个对象。默认情况下返回的是this所引用的对象。但是，可以根据需要返回其他任意对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Oj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">"this is it"</span>;</span><br><span class="line">	<span class="keyword">var</span> that = &#123;&#125;;</span><br><span class="line">	that.name = <span class="string">"that is it"</span>;</span><br><span class="line">	<span class="keyword">return</span> that;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> Oj();</span><br><span class="line">o.name <span class="comment">//"that is it"</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，构造函数可以自由地返回任意对象，只要它是一个对象。因此利用这个特性，可以创建无new构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> that = &#123;&#125;;</span><br><span class="line">	that.name = name;</span><br><span class="line">	<span class="keyword">return</span> that;</span><br><span class="line">&#125;</span><br><span class="line">或</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		name: name</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//使用这种方式有一个问题，它会丢失原型链接。</span></span><br><span class="line"><span class="comment">//可以这样改进</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Person))&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Person();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="原型模式">原型模式</h3><p>构造函数的缺点是，每个方法都要在每个实例上重新创建一遍。这个问题可以通过原型模式来解决。</p>
+<p>我们创建的每一个函数都有一个<code>prototype</code>属性，这个属性是一个指针，指向一个对象，这个对象的用途是包含可以以由特定类型的所有实例共享的属性和方法。默认情况下，这个原型对象会自动获得一个<code>constructor</code>属性，这个属性包含一个指向原构造函数的指针。</p>
+<p>当调用构造函数创建新实例后，该实例的内部将包含一个指针，指向构造函数的原型对象。（在ff、safari、Chrome中有<code>__proto__</code>属性，其他浏览器中这个属性对脚本不可见）我们可以通过<code>isPrototypeOf()</code>方法来确定对象之间是否存在这种关系。</p>
+<p>当为对象实例添加属性时，这个属性就会屏蔽原型对象中的同名属性；换句话说，添加这个属性只会阻止我们访问原型中的那个属性，但不会修改那个属性。我们可以通过<code>delete</code>删除该属性来重新访问原型中的属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"Lomo"</span>;</span><br><span class="line">Person.prototype.age = <span class="string">"24"</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"mo"</span>);</span><br><span class="line">person1.sayName();<span class="comment">//undefined</span></span><br><span class="line">person2.sayName();<span class="comment">//"mo"</span></span><br><span class="line"><span class="comment">//屏蔽了原型上的属性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> person1.name;</span><br><span class="line">person1.sayName();<span class="comment">//"Lomo"</span></span><br><span class="line"><span class="comment">//delete后可以访问原型的属性</span></span><br><span class="line"></span><br><span class="line">Person.prototype.isPrototypeOf(person1);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">alert(<span class="string">"name"</span> <span class="keyword">in</span> person1);<span class="comment">//true</span></span><br><span class="line">alert(<span class="string">"age"</span> <span class="keyword">in</span> person1);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">person1.hasOwnProperty(<span class="string">"name"</span>);<span class="comment">//true</span></span><br><span class="line">person1.hasOwnProperty(<span class="string">"age"</span>);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过这种方式判断属性是实例中的还是原型中的</span></span><br></pre></td></tr></table></figure>
+<p>原型模式也有缺点的。原型中的属性是被很多实例共享的，如果是引用类型的属性，假如其中一个对象对其进行了修改，那么这个改变也会反映到其他实例上。</p>
+<h3 id="其他对象创建模式">其他对象创建模式</h3><ul>
+<li><p>组合模式<br>组合使用构造函数模式与原型模式。构造函数用于定义实例属性，原型模式用于定义方法和共享的属性。</p>
+</li>
+<li><p>动态原型模式<br>它把所有信息封装在构造函数，通过再构造函数中初始化原型，又保持了同时使用构造函数和原型的优点。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age ,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.job = job;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>) &#123;</span><br><span class="line">		Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			alert(<span class="keyword">this</span>.name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>寄生构造函数模式<br>基本思想就是创建一个函数，该函数的做用事封装创建对象的代码，然后返回新创建的对象。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	o.name = name;</span><br><span class="line">	o.age = age;</span><br><span class="line">	o.job = job;</span><br><span class="line">	o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>稳妥构造函数模式<br>类似于寄生构造函数模式，区别在于：新创建对象的实例方法不引用<code>this</code>、不使用<code>new</code>操作符调用构造函数。这种模式创建的对象中，除了使用<code>sayName()</code>方法之外，没有其他办法访问<code>name</code>的值.</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">	<span class="comment">//这里添加私有属性和方法</span></span><br><span class="line">	o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(name);<span class="comment">//注意这里没有this</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> lomo = Person(<span class="string">"lomo"</span>,<span class="number">24</span>,<span class="string">"student"</span>);</span><br><span class="line">lomo.sayName();<span class="comment">//"lomo"</span></span><br><span class="line">lomo.name = <span class="string">"mo"</span>;</span><br><span class="line">lomo.sayName();<span class="comment">//"lomo"</span></span><br><span class="line">lomo.name <span class="comment">//"mo"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="更高级的玩法">更高级的玩法</h2><h3 id="命名空间模式">命名空间模式</h3><p>JS中并没有内置命名空间，我们可以去实现它。创建一个全局对象，然后将所有功能添加到改对象中，这样就不会污染全局。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用这种方式建立命名空间。</span></span><br><span class="line"><span class="keyword">var</span> MYAPP = MYAPP || &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>在添加一个属性最好检查它是否已经存在。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">MYAPP.namespace = <span class="function"><span class="keyword">function</span> (<span class="params">ns_string</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> parts = ns_string.split(<span class="string">'.'</span>),</span><br><span class="line">		parent = MYAPP,</span><br><span class="line">		i;</span><br><span class="line">	<span class="keyword">if</span>(parts[<span class="number">0</span>]===<span class="string">"MYAPP"</span>)&#123;</span><br><span class="line">		parts = parts.slice(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;parts.length; i+=<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">typeof</span> parent[parts[i]] === <span class="string">"undefined"</span>) &#123;</span><br><span class="line">			parent[parts[i]] = &#123;&#125;;</span><br><span class="line">		&#125;</span><br><span class="line">		parent = parent[parent[i]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> parent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MYAPP.namespace(<span class="string">'MYAPP.module1.module2'</span>);<span class="comment">//返回MYAPP.module1.module2</span></span><br></pre></td></tr></table></figure>
+<h3 id="声明依赖关系">声明依赖关系</h3><p>在函数或者模块顶部声明代码所依赖的模块有以下优点：</p>
+<ul>
+<li>清晰明了</li>
+<li>解析局部变量速度比全局变量，能优化性能。</li>
+<li>减少代码量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//依赖</span></span><br><span class="line">	<span class="keyword">var</span> e = MYAPP.util.Event,</span><br><span class="line">		d = MYAPP.util.Dom;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="私有属性和方法">私有属性和方法</h3><p>JS没有特殊的语法表示私有属性和方法。我们可以使用闭包来实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Gadget</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//私有成员</span></span><br><span class="line">	<span class="keyword">var</span> name = <span class="string">'ipod'</span>;</span><br><span class="line">	<span class="comment">//共有成员</span></span><br><span class="line">	<span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> toy = <span class="keyword">new</span> Gadget();</span><br><span class="line">toy.name;<span class="comment">//undefined</span></span><br><span class="line">toy.getName();<span class="comment">//ipod</span></span><br><span class="line"><span class="comment">//需要注意的是不要传递保持私有性的数组和对象的引用</span></span><br><span class="line"><span class="comment">//每次调用构造函数的时候这些私有属性都会被重复创建</span></span><br><span class="line"><span class="comment">//是原型具有私有属性</span></span><br><span class="line"></span><br><span class="line">Gadget.prototype = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> owner = <span class="string">'lomo'</span>;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		getBrowser:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> browser;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;())</span><br><span class="line"><span class="comment">//揭示模式可以将私有方法暴露成为公有方法</span></span><br><span class="line"><span class="keyword">var</span> myapp;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line">	myarray = &#123;</span><br><span class="line">		a: a,</span><br><span class="line">		b: b</span><br><span class="line">	&#125;</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+<h3 id="模块模式">模块模式</h3><p>模块模式就是以上几种模式的组合。强烈建议用这种方式组织代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">MYAPP.namespace(<span class="string">'MYAPP.util.array'</span>);</span><br><span class="line">MYAPP.util.array = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//依赖</span></span><br><span class="line">	<span class="keyword">var</span> uobj = MYAPP.util.obj;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//私有属性</span></span><br><span class="line">	<span class="keyword">var</span> name = <span class="string">"lomo"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//私有方法</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//公有API</span></span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		inArray:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="comment">//...</span></span><br><span class="line">		&#125;,</span><br><span class="line">		a: a,</span><br><span class="line">		name:name</span><br><span class="line">	&#125;</span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line"><span class="comment">//我们也可以将全局变量导入到模块中</span></span><br><span class="line">MYAPP.util.array = (<span class="function"><span class="keyword">function</span>(<span class="params">app, global</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//引用全局对象</span></span><br><span class="line">&#125;(MYAPP,<span class="keyword">this</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="沙箱模式">沙箱模式</h3><p>命名空间模式有两个缺点：对单个全局变量的依赖变成对应用程序的全局变量依赖、点分割需要更长的解析时间(如<code>MYAPP.util.array</code>)。<br>命名空间模式，有一个全局对象；沙箱模式，则是由一个全局构造函数<code>Sandbox()</code>。<br>该模式具有两个新特性：</p>
+<ul>
+<li>可以不用new操作符</li>
+<li>Sandbox()可以接受参数，参数指定了所需要的模块名。回调函数中的box参数为新建的实例自身。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sandbox([<span class="string">'ajax'</span>, <span class="string">'event'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">box</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">	Sandbox([<span class="string">'dom'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">box</span>)</span>&#123;</span><br><span class="line">		<span class="comment">//另一个沙箱化的box对象</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Sandbox.modules = &#123;</span><br><span class="line">	<span class="comment">//模块</span></span><br><span class="line">	dom: <span class="function"><span class="keyword">function</span>(<span class="params">box</span>)</span>&#123;</span><br><span class="line">		box.getElement = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Sandbox()&#123;</span><br><span class="line"><span class="comment">//将参数转换成数组</span></span><br><span class="line">	<span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line"><span class="comment">//最后一个参数是回调函数</span></span><br><span class="line">	calback = args.pop();</span><br><span class="line">	modules = (args[<span class="number">0</span>] &amp;&amp; <span class="keyword">typeof</span> args[<span class="number">0</span>] === <span class="string">"string"</span>)?args:args[<span class="number">0</span>],</span><br><span class="line">	i;</span><br><span class="line"><span class="comment">//无new操作符也可正常运行</span></span><br><span class="line">	<span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Sandbox)) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Sandbox(modules, callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//需要添加的this属性</span></span><br><span class="line">	<span class="keyword">this</span>.a = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//向this对象添加模块</span></span><br><span class="line">	<span class="keyword">if</span>(!modules || modules === <span class="string">'*'</span>) &#123;</span><br><span class="line">		modules = [];</span><br><span class="line">		<span class="keyword">for</span>(i <span class="keyword">in</span> Sandbox.modules) &#123;</span><br><span class="line">			<span class="keyword">if</span>(Sandbox.modules.hasOwnProperty(i))&#123;</span><br><span class="line">				modules.push(i)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//初始化需要的模块</span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i&lt;modules.length; i++)&#123;</span><br><span class="line">		Sandbox.modules[modules[i]](<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//callbakc</span></span><br><span class="line">	callback(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以添加原型属性</span></span><br><span class="line">Sandbox.prototype = &#123;</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态成员">静态成员</h3><ul>
+<li><p>公有静态成员<br>从一个实例到另一个实例不会改变的属性和方法。构造函数也是对象，可以拥有属性，向函数中添加属性即可。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Gadget = <span class="function"><span class="keyword">function</span>(<span class="params">price</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.price = price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态方法</span></span><br><span class="line">Gadget.isShiny = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> msg = <span class="string">"you bet"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span> <span class="keyword">instanceof</span> Gadget) &#123;</span><br><span class="line">		msg = <span class="string">"it costs "</span> + <span class="keyword">this</span>.price;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Gadget.prototype.isShiny = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Gadget.isShiny.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//静态调用</span></span><br><span class="line">Gadget.isShiny();</span><br><span class="line"></span><br><span class="line"><span class="comment">//非静态调用</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Gadget(<span class="string">'100'</span>);</span><br><span class="line">a.isShiny();<span class="comment">// ‘it costs 100’</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>私有静态成员<br>同一构造函数创建的实例共享该成员，构造函数外部不可访问该成员</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Gadget = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> counter = <span class="number">0</span>,</span><br><span class="line">		NewGadget;</span><br><span class="line">	<span class="comment">//新的构造函数</span></span><br><span class="line">	NewGadget = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		counter += <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	NewGadget.prototype.getLastId = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> counter;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> NewGadget;</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</div>
+    <div class="article-more">
+        <div class="line"></div>
+        
+        
+        <a class="prev link" href="/2015/09/19/JS获取当前时间戳/"><i class="icon-left-open"></i>JS时间操作</a>
+        
+    </div>
+    
+
+    
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="article-title-JS模式：对象" data-title="JS模式：对象"
+             data-url="http://lomo321.github.io/2015/09/20/JS pattern 1st/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name: "lomo321"};
+            (function () {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
+    
+
+</article>
+
+
+
+
+</div>
+    </div>
+    <footer id="footer">
+    <div class="footer-content">
+        
+        <div class="friend-link">
+                友情链接:
+            
+                <a target="_blank" href="http://www.skylerzhang.com/">斯盖勒</a>
+            
+                <a target="_blank" href="http://chenyaoswu.github.io/archives/">陈老二</a>
+            
+                <a target="_blank" href="http://hello13.net/">田13</a>
+            
+        </div>
+        
+        <div class="visit-me">
+            visit me:
+            <a target="_blank" href="http://weibo.com/lomo123"><i class="icon-weibo"></i></a>
+            <a target="_blank" href="https://github.com/lomo321"><i class="icon-github-squared"></i></a>
+            <a target="_blank" href="https://instagram.com/leungmohh/"><i class="icon-linkedin-squared"></i></a>
+        </div>
+        <div class="lomo">
+            <span class="a">----</span><span class="b">----</span><span class="c">------</span>
+            Lomo 2015 @ Hexo
+            <span class="c">------</span><span class="b">----</span><span class="a">----</span>
+        </div>
+    </div>
+</footer>
+</div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--<script src="/js/require.js" type="text/javascript"></script>-->
+<script src="/js/com/velocity/velocity.min.js" type="text/javascript"></script>
+<script src="/js/com/velocity/velocity.ui.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+</body>
+
+</html>

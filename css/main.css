@@ -301,13 +301,13 @@ html, body {
       font-weight: 500;
       color: #172941;
       padding-bottom: 5px;
-      border-bottom: 2px dotted #7898a7; }
+      border-bottom: 2px dotted #172941; }
     .article .article-entry h3, .article .article-entry h4, .article .article-entry h5, .article .article-entry h6 {
       margin-top: 20px;
       font-weight: 300;
-      color: #574C4C;
+      color: #452e11;
       padding-bottom: 5px;
-      border-bottom: 1px dotted #ddd; }
+      font-style: italic; }
     .article .article-entry video {
       max-width: 100%; }
     .article .article-entry strong {
@@ -373,7 +373,8 @@ html, body {
     overflow: auto;
     color: #cccccc;
     line-height: 25.6px;
-    margin-top: 20px; }
+    margin-top: 20px;
+    margin-bottom: 50px; }
   .article .line-numbers, .article .article-entry .highlight .gutter pre, .article .article-entry .gist .gist-file .gist-data .line-numbers {
     color: #999;
     font-size: 0.85em; }
@@ -806,16 +807,13 @@ html, body {
 
 #footer {
   font-size: 12px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   height: 100px;
+  width: 300px;
+  margin: auto;
   background-color: #172941;
   color: #d9c9b8; }
   #footer .footer-content {
-    width: 80%;
     height: 100%;
-    margin: auto;
     text-align: center; }
     #footer .footer-content .friend-link a {
       margin-left: 20px;
