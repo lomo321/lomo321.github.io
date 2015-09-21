@@ -43,7 +43,9 @@ html, body {
   min-height: 100%;
   padding-left: 50px;
   background-color: #172941;
-  overflow: auto; }
+  overflow: auto;
+  width: 100%;
+  box-sizing: border-box; }
 
 #background {
   position: fixed;
@@ -808,12 +810,15 @@ html, body {
 #footer {
   font-size: 12px;
   height: 100px;
-  width: 300px;
-  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   background-color: #172941;
   color: #d9c9b8; }
   #footer .footer-content {
     height: 100%;
+    width: 300px;
+    margin-left: -50%;
     text-align: center; }
     #footer .footer-content .friend-link a {
       margin-left: 20px;
