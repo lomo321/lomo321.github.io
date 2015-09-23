@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>lomo's blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/img/favicon.ico"  type="image/x-icon">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a33121bb6751d4a4716c741475e1f9e5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/css/fontello.css" type="text/css">
+</head>
+<body>
+
+<div id="container">
+    <div id="sideBar">
+    <!--<h1>-->
+        <!--<span class="line-left"></span>-->
+        <!--<div class="brand">-->
+            <!--<span class="line-top"></span>-->
+            <!--<a class="logo" href="/">Lomo's Blog</a>-->
+            <!--<span class="line-bottom"></span>-->
+        <!--</div>-->
+        <!--<span class="line-right"></span>-->
+    <!--</h1>-->
+    <!--<ul class="menu">-->
+        <!--<li class="menu-item"><a href="/" class="menu-link"><i class=" icon-weibo "></i>Home</a></li>-->
+        <!--<li class="menu-item"><a href="/archives/" class="menu-link">Archive</a></li>-->
+        <!--<li class="menu-item"><a class="menu-link" style="text-decoration:line-through;">Photo</a></li>-->
+        <!--<li class="menu-item"><a class="menu-link" id="aboutMeButton">About Me</a></li>-->
+    <!--</ul>-->
+    <!--&lt;!&ndash;<div class="myLinks">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="github"></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="weibo"></a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div id="aboutMe">-->
+        <!--<div id="cancel">||</div>-->
+    <!--</div>-->
+    <ul class="menu">
+        <li class="menu-item"><a href="/" class="menu-link"><i class="demo-icon icon-home"></i></a></li>
+        <li class="menu-item"><a href="/archives/" class="menu-link"><i class="demo-icon icon-archive"></i></a></li>
+        <li class="menu-item"><a class="menu-link" style="text-decoration:line-through;"><i class="demo-icon icon-picture"></i></a></li>
+        <li class="menu-item"><a class="menu-link" id="aboutMeButton"><i class="demo-icon icon-info"></i></a></li>
+    </ul>
+    <div class="background"></div>
+</div>
+    <div id="main">
+        <nav id="mobile-nav">
+        <h1>
+            <span class="line-left"></span>
+            <div class="brand">
+                <span class="line-top"></span>
+                <a class="logo" href="/">Lomo's Blog</a>
+                <span class="line-bottom"></span>
+            </div>
+            <span class="line-right"></span>
+        </h1>
+        <ul class="menu2">
+            <li class="menu-item2"><a href="/" class="menu-link">Home</a></li>
+            <li class="menu-item2"><a href="/archives/" class="menu-link">Archive</a></li>
+            <li class="menu-item2"><a class="menu-link" style="text-decoration:line-through;">Photo</a></li>
+            <li class="menu-item2"><a class="menu-link" style="text-decoration:line-through;">About Me</a></li>
+        </ul>
+        <div id="topBar">
+            <!--<div class="toolBar"></div>-->
+            <h1 id="title"> Lomo's Blog</h1>
+        </div>
+    <div class="bt-line"></div>
+</nav>
+        <div id="content">
+
+
+    
+<article class="article">
+    <header class="article-title" id="article-title-JS字符串与数组操作">
+        
+        <h1>JS字符串与数组操作</h1>
+        
+        <h5 class="date"><i class="demo-icon icon-calendar"></i>2015/09/23</h5>
+
+        <div class="line"></div>
+    </header>
+    
+    <div class="article-entry"><p>话说这些真是看一遍忘一遍啊，归根到底还是用得少。做一下笔记，免得下次用又去找资料了。</p>
+<ul>
+<li><a href="#字符串基本操作">字符串基本操作:</a> <a href="#split">split</a>、<a href="#slice / substring">slice/substring</a>、<a href="#substr">substr</a>、<a href="#concat">concat</a>、<a href="#indexOf / lastIndexOf">indexOf/lastIndexOf</a>、<a href="#charAt / charCodeAt">charAt/charCodeAt</a>、<a href="#search / match / replace">search/match/replace</a>、<a href="#toLowerCase / toUpperCase">toLowerCase/toUpperCase</a></li>
+<li><a href="#字符串操作实用函数">字符串操作实用函数:</a> <a href="#trim">trim</a>、<a href="#计算字符串长度">计算字符串长度</a></li>
+</ul>
+<h2 id="字符串基本操作">字符串基本操作</h2><h3 id="split">split</h3><p>感觉<code>split</code>是我用得最多的一个api。可以将字符串以输入的参数字符分隔，然后返回一个数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abcd"</span>.split()</span><br><span class="line"><span class="comment">//["abcd"]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcd"</span>.split(<span class="string">""</span>)</span><br><span class="line"><span class="comment">//["a", "b", "c", "d"]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcd"</span>.split(<span class="string">"b"</span>)</span><br><span class="line"><span class="comment">//["a","cd"]</span></span><br></pre></td></tr></table></figure>
+<h3 id="slice_/_substring">slice / substring</h3><p>截取字符串。接受两个参数，第一个是起始位位置，第二个是结束位+1。两者区别在于传入负值参数的时候，<code>slice</code>是会从末尾开始数，<code>substring</code>则不会。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abcdef"</span>.slice()</span><br><span class="line"><span class="comment">//"abcdef"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcdef"</span>.slice(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"bcdef"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcdef"</span>.slice(<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment">//"bc"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以上操作 substring具有相同结果</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcdef"</span>.slice(-<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"f"</span></span><br><span class="line"><span class="string">"abcde"</span>.substring(-<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"abcde"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcdef"</span>.slice(<span class="number">1</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"bcde"</span></span><br><span class="line"><span class="string">"abcde"</span>.substring(<span class="number">1</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"a"</span></span><br></pre></td></tr></table></figure>
+<h3 id="substr">substr</h3><p>返回字符串的一个子串，传入参数是起始位置和长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abcde"</span>.substr(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">//"bc"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.substr(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"bcde"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.substr(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line"><span class="comment">//"bcde"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.substr(<span class="number">1</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="comment">//""</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.substr(<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"><span class="comment">//""</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.substr(-<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment">//"e"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.substr(-<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment">//"de"</span></span><br></pre></td></tr></table></figure>
+<h3 id="concat">concat</h3><p>拼接字符串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abc"</span>.concat(<span class="string">"def"</span>)</span><br><span class="line"><span class="comment">//"abcdef"</span></span><br></pre></td></tr></table></figure>
+<h3 id="indexOf_/_lastIndexOf">indexOf / lastIndexOf</h3><p>返回一个字符在字符串中第一次出现的索引。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"ababa"</span>.indexOf(<span class="string">"a"</span>)</span><br><span class="line"><span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="string">"ababa"</span>.lastIndexOf(<span class="string">"a"</span>)</span><br><span class="line"><span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+<h3 id="charAt_/_charCodeAt">charAt / charCodeAt</h3><p>返回索引处的字符 / unicode编码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abcde"</span>.charAt(<span class="string">"2"</span>)</span><br><span class="line"><span class="comment">//"c"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.charAt()</span><br><span class="line"><span class="comment">//"a"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abcde"</span>.charCodeAt(<span class="number">2</span>)</span><br><span class="line"><span class="comment">//99</span></span><br></pre></td></tr></table></figure>
+<h3 id="search_/_match_/_replace">search / match / replace</h3><p>这三个都涉及到正则表达式，所以放在一起讨论。<code>search</code>返回第一次匹配的索引值,<code>replace</code>找到匹配的位置并替换,<code>match</code>则以数组形式返回匹配的字串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abcdef"</span>.search(<span class="regexp">/ab/</span>)</span><br><span class="line"><span class="comment">//0</span></span><br><span class="line"><span class="string">"abcdef"</span>.search(<span class="regexp">/cd/</span>)</span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="string">"abcdef"</span>.search(<span class="regexp">/ba/</span>)</span><br><span class="line"><span class="comment">//-1</span></span><br><span class="line"><span class="string">"abababcdef"</span>.search(<span class="regexp">/ab/</span>)</span><br><span class="line"><span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abababcdef"</span>.replace(<span class="regexp">/ab/</span>,<span class="string">"hh"</span>)</span><br><span class="line"><span class="comment">//"hhababcdef"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abababcdef"</span>.replace(<span class="regexp">/ab/g</span>,<span class="string">"hh"</span>)</span><br><span class="line"><span class="comment">//"hhhhhhcdef"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abababcdef"</span>.match(<span class="regexp">/ab/</span>)</span><br><span class="line"><span class="comment">//["ab"]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"abababcdef"</span>.match(<span class="regexp">/ab/g</span>)</span><br><span class="line"><span class="comment">//["ab", "ab", "ab"]</span></span><br></pre></td></tr></table></figure>
+<h3 id="toLowerCase_/_toUpperCase">toLowerCase / toUpperCase</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"abababcdef"</span>.toUpperCase()</span><br><span class="line"><span class="comment">//"ABABABCDEF"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span><br><span class="line">## 字符串操作实用函数 ##</span><br><span class="line"></span><br><span class="line">### trim ###</span><br><span class="line">去除字符串前后的空格</span><br><span class="line"></span><br><span class="line">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="built_in">String</span>.prototype.Trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="计算字符串长度">计算字符串长度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.LengthW = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/[^\x00-\xff]/g</span>,<span class="string">"**"</span>).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">"abc"</span>.LengthW()</span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"></span><br><span class="line"><span class="string">"bcd哈哈哈"</span>.LengthW()</span><br><span class="line"><span class="comment">//9</span></span><br></pre></td></tr></table></figure></div>
+    <div class="article-more">
+        <div class="line"></div>
+        
+        
+        <a class="prev link" href="/2015/09/20/JS pattern 1st/"><i class="icon-left-open"></i>JS模式：对象</a>
+        
+    </div>
+    
+
+    
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="article-title-JS字符串与数组操作" data-title="JS字符串与数组操作"
+             data-url="http://lomo321.github.io/2015/09/23/String-and-Array/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name: "lomo321"};
+            (function () {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
+    
+
+</article>
+
+
+
+
+</div>
+    </div>
+    <footer id="footer">
+    <div class="footer-content">
+        
+        <div class="friend-link">
+                友情链接:
+            
+                <a target="_blank" href="http://www.skylerzhang.com/">斯盖勒</a>
+            
+                <a target="_blank" href="http://chenyaoswu.github.io/archives/">陈老二</a>
+            
+                <a target="_blank" href="http://hello13.net/">田13</a>
+            
+        </div>
+        
+        <div class="visit-me">
+            visit me:
+            <a target="_blank" href="http://weibo.com/lomo123"><i class="icon-weibo"></i></a>
+            <a target="_blank" href="https://github.com/lomo321"><i class="icon-github-squared"></i></a>
+            <a target="_blank" href="https://instagram.com/leungmohh/"><i class="icon-linkedin-squared"></i></a>
+        </div>
+        <div class="lomo">
+            <span class="a">----</span><span class="b">----</span><span class="c">------</span>
+            Lomo 2015 @ Hexo
+            <span class="c">------</span><span class="b">----</span><span class="a">----</span>
+        </div>
+    </div>
+</footer>
+</div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--<script src="/js/require.js" type="text/javascript"></script>-->
+<script src="/js/com/velocity/velocity.min.js" type="text/javascript"></script>
+<script src="/js/com/velocity/velocity.ui.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
