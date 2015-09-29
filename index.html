@@ -91,7 +91,18 @@
         <div class="line"></div>
     </header>
     
-    <div class="article-entry"></div>
+    <div class="article-entry"><p>上一篇介绍了JS对象的特点以及如何创建对象。这篇谈一下在JS里如何实现继承。</p>
+<p>实现继承的主要方式是利用原型链。其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。我们让原型对象等于另一个类的实例，此时原型对象将包含一个指向另一个原型的指针，假如另一个原型又是另一个类型的实例，如此层层递进，构成了实例与原型的链条。这就是原型链。</p>
+<ul>
+<li><a href="#默认方式">默认方式</a></li>
+<li><a href="#借用构造函数">借用构造函数</a></li>
+<li><a href="#组合继承">组合继承</a></li>
+<li><a href="#共享原型">共享原型</a></li>
+<li><a href="#临时构造函数">临时构造函数</a></li>
+<li><a href="#原型式继承">原型式继承</a></li>
+<li><a href="#寄生式继承">寄生式继承</a></li>
+<li><a href="#寄生组合式继承">寄生组合式继承</a></li>
+</ul></div>
     <div class="article-more">
         <div class="line"></div>
         <a class="link" href="/2015/09/29/JS pattern 2nd/">More<i class="icon-right-circle"></i></a>
